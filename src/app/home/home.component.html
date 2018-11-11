@@ -1,0 +1,7 @@
+<div fxLayout="row" fxLayout.xs="column" fxLayoutGap="10px" >
+  <cm-course-card fxFlex="60%" fxLayoutAlign=" stretch" class="courseCard"
+                  *ngFor="let course of courses" 
+                  [course]="course"
+                  >
+  </cm-course-card>
+</div>

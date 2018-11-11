@@ -1,0 +1,30 @@
+<button mat-icon-button mat-dialog-close class="pull-right">
+  <mat-icon>clear</mat-icon>
+</button>
+
+<h2 mat-dialog-title> {{ title }}</h2>
+
+<form [formGroup]="courseForm">
+  <mat-dialog-content>
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Course Name" formControlName="name" required>
+      <mat-error *ngIf="courseForm.get('name').hasError('required')">
+        <strong>Required</strong>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Description" formControlName="description">
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Location" formControlName="location" required>
+      <mat-error *ngIf="courseForm.get('location').hasError('required')">
+        <strong>Required</strong>
+      </mat-error>
+    </mat-form-field>
+  </mat-dialog-content>
+  <div mat-dialog-actions>
+    <span class="fill-remaining-space"></span>
+    <button mat-raised-button [disabled]="courseForm.invalid" color="primary" (click)="submit()">Submit</button>
+    <button mat-raised-button mat-dialog-close>Cancel</button>
+  </div>
+</form>

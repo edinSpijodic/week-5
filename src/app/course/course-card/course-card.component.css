@@ -1,0 +1,7 @@
+.home-card {
+  min-height: 150px;
+}
+
+.home-card-title {
+  cursor: pointer;
+}

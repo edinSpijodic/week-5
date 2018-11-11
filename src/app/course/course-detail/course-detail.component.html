@@ -1,0 +1,25 @@
+<form *ngIf="courseDetailForm" [formGroup]="courseDetailForm">
+
+  <h1 class="mat-h1" style="text-align:center">{{ course.name }}</h1>
+
+  <div fxLayout="row">
+    <mat-card fxFlex="50%">
+      <mat-card-title>Info</mat-card-title>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Course Name" formControlName="name" required>
+        <mat-error *ngIf="courseDetailForm.get('name').hasError('required')">
+          <strong>Required</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <textarea matInput placeholder="Description" formControlName="description"></textarea>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Location" formControlName="location" required>
+        <mat-error *ngIf="courseDetailForm.get('location').hasError('required')">
+          <strong>Required</strong>
+        </mat-error>
+      </mat-form-field>
+    </mat-card>
+  </div>
+</form>

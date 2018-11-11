@@ -1,0 +1,4 @@
+.courseCard { 
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
